@@ -1,7 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import React, { useState } from 'react';
 
 const quizData = [
@@ -24,14 +24,15 @@ const quizData = [
 ];
 
 export default function Page() {
+  const router = useRouter();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
 
   const handleAnswerOptionClick = (answerIndex: number) => {
     if (currentQuestion < quizData.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      alert('You have completed the quiz!');
-      // redirect('/quiz/result');
+      router.push('/answer');
     }
   };
 
@@ -46,9 +47,8 @@ export default function Page() {
         </div>
         <ul className="flex flex-col gap-2">
           {quizData[currentQuestion].answers.map((answer, answerIndex) => (
-            <li>
+            <li key={answerIndex}>
               <Button
-                key={answerIndex}
                 onClick={() => handleAnswerOptionClick(answerIndex)}
                 className='w-full'
               >
