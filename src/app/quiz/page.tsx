@@ -80,7 +80,7 @@ export default function Page() {
         <span className="text-xl font-semibold w-full">Question {currentQuestion + 1}/{quizData.length}</span>  
         <Progress value={((currentQuestion + 1) * 100 / quizData.length).toFixed(0)} />
         <div className="w-full p-4 rounded-lg shadow-inner bg-black/30">
-          <h2 className="text-2xl font-bold">{quizData[currentQuestion].question}</h2>
+          <h2 className="text-lg font-bold">{quizData[currentQuestion].question}</h2>
         </div>
 
         <ul className="w-full flex flex-col gap-2 mt-8">
