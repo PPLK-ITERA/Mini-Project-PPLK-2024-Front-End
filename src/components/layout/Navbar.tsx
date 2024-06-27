@@ -11,13 +11,13 @@ const Navbar = () => {
         <div>
             {isLoggedIn ? (
                 <div className='flex justify-between items-center w-full'>
-                        <h2 className='font-bold'>Website Kuis PPLK</h2>
+                  <h2 className='font-bold'>Website Kuis PPLK</h2>
                         
-                        <Button className="px-4 rounded-md" type="submit">Logout</Button>
+                  <Button className="px-4 rounded-md" type="submit">Logout</Button>
                 </div>
             ) : (
-                <div className='flex justify-center'>
-                    <h2>Website Kuis PPLK</h2>
+                <div className='flex justify-center items-center w-full'>
+                    <h2 className='font-bold'>Website Kuis PPLK</h2>
                 </div>
             )}
         </div>
