@@ -11,5 +11,5 @@ export default function RootLayout({
       <div className="fixed w-screen h-screen top-0 left-0 -z-50 bg-black/30" />
       {children}
     </div>
-  )
+  );
 }
