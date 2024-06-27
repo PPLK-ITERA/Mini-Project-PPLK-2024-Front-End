@@ -5,15 +5,18 @@ import { Button } from '../ui/button';
 import { Montserrat } from 'next/font/google';
 import { Macondo } from 'next/font/google';
 import { LogOut } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 
 const montserrat = Montserrat({subsets:["latin"]})
 const macondo = Macondo({weight:"400", subsets:["latin"]})
 
 const Navbar = () => {
-    const isLoggedIn = true;
+    const pathname = usePathname()
+
+    const isLogin = true
     return (
       <div>
-        {isLoggedIn ? (
+        {(pathname !== '/') && (isLogin) ? (
           <nav className="bg-gradient-to-r from-candlelight-800 to-candlelight-950 px-2 py-2 w-full">
             <div className='flex justify-between items-center w-full'>
               <h2 className={`${montserrat.className} text-white text-center `}>Welcome, User</h2>
