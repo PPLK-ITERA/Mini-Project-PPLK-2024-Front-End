@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <div className="flex min-h-screen flex-col items-center justify-between ">
-        <LoginForm/>
+        <LoginForm />
       </div>
     </main>
   );
