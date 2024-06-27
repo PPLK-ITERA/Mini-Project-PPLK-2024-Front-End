@@ -78,7 +78,7 @@ export default function Page() {
         <div className='max-md:grow'></div>
 
         <span className="text-xl font-semibold w-full">Question {currentQuestion + 1}/{quizData.length}</span>  
-        <Progress value={((currentQuestion + 1) * 100 / quizData.length).toFixed(0)} />
+        <Progress value={((currentQuestion + 1) * 100 / quizData.length)} />
         <div className="w-full p-4 rounded-lg shadow-inner bg-black/30">
           <h2 className="text-lg font-bold">{quizData[currentQuestion].question}</h2>
         </div>
