@@ -1,10 +1,11 @@
-import HasilKuis from "@/components/fragments/hasilKuis";
+import Image from "next/image";
+import LoginForm from "@/components/layout/LoginForm";
 
 export default function Home() {
   return (
     <main>
       <div className="flex min-h-screen flex-col items-center justify-between ">
-        <HasilKuis />
+        <LoginForm/>
       </div>
     </main>
   );
