@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
+import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 
 const quizData = [
@@ -30,6 +31,7 @@ export default function Page() {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       alert('You have completed the quiz!');
+      // redirect('/quiz/result');
     }
   };
 
