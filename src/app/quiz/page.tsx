@@ -105,7 +105,7 @@ export default function Page() {
           onClick={submitAnswer}
           className="w-full bg-jaffa-600 my-8"
         >
-          Next
+          {currentQuestion < quizData.length - 1 ? 'Next' : 'Submit'}
           <ArrowRight />
         </Button>
     </div>
