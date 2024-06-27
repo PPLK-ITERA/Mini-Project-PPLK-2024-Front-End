@@ -74,7 +74,9 @@ export default function Page() {
   }
 
   return (
-    <div className={`${montserrat.className} mx-auto flex flex-col items-center justify-center h-full w-full max-w-3xl text-start place-content-center text-white gap-4`}>
+    <div className={`${montserrat.className} mx-auto px-8 flex flex-col items-center justify-center h-full w-full max-w-3xl text-start place-content-center text-white gap-4`}>
+        <div className='max-md:grow'></div>
+
         <span className="text-xl font-semibold w-full">Question {currentQuestion + 1}/{quizData.length}</span>  
         <Progress value={((currentQuestion + 1) * 100 / quizData.length).toFixed(0)} />
         <div className="w-full p-4 rounded-lg shadow-inner bg-black/25">
@@ -97,9 +99,11 @@ export default function Page() {
           ))}
         </ul>
 
+        <div className='max-md:grow'></div>
+
         <Button
           onClick={submitAnswer}
-          className="w-full bg-jaffa-600 mt-8"
+          className="w-full bg-jaffa-600 my-8"
         >
           Next
           <ArrowRight />
