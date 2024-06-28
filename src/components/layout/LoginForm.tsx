@@ -39,7 +39,7 @@ const LoginForm = () => {
     event.preventDefault();
 
     const response = await fetch(
-      "https://c0c7-110-137-38-231.ngrok-free.app/api/v1/login",
+      `https://c0c7-110-137-38-231.ngrok-free.app/api/v1/login`,
       {
         method: "POST",
         headers: {
