@@ -45,12 +45,12 @@ const CarouselForm = () => {
               <div>
                 <Card className="bg-white/10 border-none backdrop-blur-lg p-2 lg:p-5 md:aspect-square flex justify-center items-center flex-col">
                   <CardTitle>
-                    <h1 className="text-2xl lg:text-4xl font-bold text-center text-white">
+                    <p className="text-2xl lg:text-4xl font-bold text-center text-white">
                       {item.title}
-                    </h1>
-                    <h2 className="text-sm lg:text-lg font-semibold text-center text-white">
+                    </p>
+                    <p className="text-sm lg:text-lg font-semibold text-center text-white">
                       {item.subtitle}
-                    </h2>
+                    </p>
                   </CardTitle>
 
                   <CardContent className="flex mt-5 md:mt-20 items-center justify-center">
