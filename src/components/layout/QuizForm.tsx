@@ -12,6 +12,8 @@ import { answerQuestion, getQuestions } from '@/lib/data/question';
 import { LoadingSpinner } from '../ui/loading';
 import { useToast } from '../ui/use-toast';
 import { QuizSkeleton } from '../fragments/QuizSkeleton';
+import { motion } from "framer-motion"
+
 
 const montserrat = Montserrat({subsets: ['latin']})
 
@@ -72,22 +74,26 @@ export default function Page() {
   }
 
   return (
-    <main className={`${montserrat.className} mx-auto px-8 flex flex-col items-center justify-center h-full w-full max-w-3xl text-start place-content-center text-white gap-4`}>
+    <motion.div 
+    initial={{ opacity: 0, scale: 0.5 }}
+    animate={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1]}}
+    className={`${montserrat.className} mx-auto px-8 flex flex-col items-center justify-center h-full max-w-3xl text-start place-content-center text-white gap-4 overflow-y-auto`}>
         {
           loading ? 
           
           <QuizSkeleton className="w-full" /> :
         
-          <div>
+          <div className='flex flex-col gap-4 w-full'>
             <div className='max-md:grow' />
             
-            <span className="text-xl font-semibold w-full">Question {currentQuestion + 1}/{questions.length}</span>  
+            <span className="text-sm md:text-xl font-semibold w-full">Question {currentQuestion + 1}/{questions.length}</span>  
             <Progress value={((currentQuestion + 1) * 100 / questions.length)} />
-            <div className="w-full p-4 rounded-lg shadow-inner bg-black/30">
-              <h2 className="text-lg font-bold">{questions[currentQuestion].teks_pertanyaan}</h2>
+            <div className="w-full min-h-48 max-h-64 overflow-y-auto p-4 rounded-lg shadow-inner bg-black/30 backdrop-blur">
+              <h2 className="max-md:text-sm font-semibold text-justify">{questions[currentQuestion].teks_pertanyaan}</h2>
             </div>
             
-            <ul className="w-full flex flex-col gap-2 mt-8">
+            <ul className="w-full flex flex-col gap-2 mt-4 md:mt-8">
               {questions[currentQuestion].answer.map((ans) => (
                 <li key={ans.answer_id}>
                   <Button
@@ -95,7 +101,7 @@ export default function Page() {
                     className={clsx({
                       'bg-white text-candlelight-800 hover:bg-jaffa-100': ans.answer_id !== selectedAnswerId,
                       'bg-gradient-to-r from-candlelight-800 to-candlelight-950': ans.answer_id === selectedAnswerId,
-                    }, 'w-full font-medium')}
+                    }, 'w-full font-medium text-wrap py-2 max-md:text-sm')}
                   >
                     {ans.teks_jawaban}
                   </Button>
@@ -107,7 +113,7 @@ export default function Page() {
             
             <Button
               onClick={submitAnswer}
-              className="w-full bg-jaffa-600 my-8"
+              className="w-full bg-jaffa-600 my-4 md:my-8"
             >
               {currentQuestion < questions.length - 1 ? 'Next' : 'Submit'}
               {currentQuestion < questions.length - 1 ? <ArrowRight className="ml-2" /> : <svg className="ml-2" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +122,6 @@ export default function Page() {
             </Button>
           </div>
         }
-    </main>
+    </motion.div>
   );
 };
