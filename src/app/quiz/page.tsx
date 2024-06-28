@@ -4,10 +4,8 @@ import QuizForm from "@/components/layout/QuizForm";
 
 export default function Home() {
   return (
-    <main>
-      <div className="h-full w-full">
+      <div className="h-full max-w-3xl mx-auto">
         <QuizForm />
       </div>
-    </main>
   );
 }
