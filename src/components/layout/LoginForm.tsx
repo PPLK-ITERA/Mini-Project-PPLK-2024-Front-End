@@ -54,6 +54,8 @@ const LoginForm = () => {
 
     if (response.ok) {
       localStorage.setItem("access_token", data.access_token);
+      localStorage.setItem("username", data.user.name);
+      localStorage.setItem("email", data.user.email);
       router.push("/quiz");
     } else {
       toast({
@@ -65,7 +67,6 @@ const LoginForm = () => {
 
   if (localStorage.getItem("access_token")) { 
     router.push("/quiz");
-
     return null;
   }
 
