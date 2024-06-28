@@ -1,4 +1,4 @@
-import { Question } from "../types/QuestionsResponse"
+import { Question } from "../types/Question"
 
 export async function getQuestions(token: string): Promise<Question[]> {
     const response = await fetch(`https://c0c7-110-137-38-231.ngrok-free.app/api/v1/questions`, {

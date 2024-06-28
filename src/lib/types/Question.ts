@@ -9,5 +9,4 @@ export interface Question {
 export interface Answer {
     answer_id: number
     teks_jawaban: string
-    question_id: number
 }

@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 import { Montserrat } from 'next/font/google';
-import { Question } from '@/lib/types/QuestionsResponse';
+import { Question } from '@/lib/types/Question';
 import { answerQuestion, getQuestions } from '@/lib/data/question';
 import { LoadingSpinner } from '../ui/loading';
 import { useToast } from '../ui/use-toast';
