@@ -17,6 +17,7 @@ const Navbar = () => {
     const username = window.localStorage.getItem("username");
 
     async function handleLogOut() {
+      console.log("LOGOUT")
       const response = await fetch(
         "https://c0c7-110-137-38-231.ngrok-free.app/api/v1/logout",
         {
@@ -28,6 +29,7 @@ const Navbar = () => {
           }
         }
       );
+
       if (response.ok) {
         localStorage.removeItem("access_token")
         localStorage.removeItem("username")

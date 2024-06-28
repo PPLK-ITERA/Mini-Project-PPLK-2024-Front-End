@@ -61,10 +61,6 @@ export default function Page() {
         
         setCurrentQuestion(currentQuestion + 1)
         setSelectedAnswerId(null)
-        toast({
-          variant: "default",
-          title: "gacor kang",
-        });
       } catch (error) {
         toast({
           variant: "destructive",
