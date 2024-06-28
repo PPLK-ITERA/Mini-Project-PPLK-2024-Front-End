@@ -1,5 +1,5 @@
-import Pilar from "../ui/pilar";
-import PilarKeBerapa from "../ui/pilarKeBerapa";
+import Pilar from "@/components/ui/pilar";
+import PilarKeBerapa from "@/components/ui/pilarKeBerapa";
 
 const HasilKuis = () => {
   return (
@@ -26,12 +26,12 @@ const HasilKuis = () => {
 
           <div>
             <Pilar angka={3} hasil={5} className="text-[#ed8f45]" />
-            < PilarKeBerapa angka={5} className="bg-[#ed8f45]" />
+            <PilarKeBerapa angka={5} className="bg-[#ed8f45]" />
           </div>
 
           <div>
             <Pilar angka={4} hasil={5} className="text-[#cc8b02]" />
-            < PilarKeBerapa angka={5} className="bg-[#cc8b02]" />
+            <PilarKeBerapa angka={5} className="bg-[#cc8b02]" />
           </div>
         </div>
         <div className="text-center mt-6 sm:mt-14 mb-0.5">
