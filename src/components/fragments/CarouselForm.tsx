@@ -10,7 +10,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { type CarouselApi } from "@/components/ui/carousel";
-import { FunFact } from "@/lib/data/funfact";
+import { DATA_FUNFACT } from "@/lib/data/funfact";
+import { Person } from "@/lib/types/FunFactType";
 
 const CarouselForm = () => {
   const [api, setApi] = React.useState<CarouselApi>();
@@ -28,6 +29,13 @@ const CarouselForm = () => {
     });
   }, [api]);
 
+  function getRandomPerson(data: Person[]): Person {
+    const randomIndex = Math.floor(Math.random() * data.length);
+    return data[randomIndex];
+  }
+
+  const randomPerson :Person = getRandomPerson(DATA_FUNFACT);
+
   return (
     <div>
       <Carousel
@@ -40,17 +48,17 @@ const CarouselForm = () => {
         ]}
       >
         <CarouselContent>
-          {FunFact.map((item, index) => (
+          {randomPerson.funfact.map((item, index) => (
             <CarouselItem key={index}>
               <div>
                 <Card className="bg-white/10 border-none backdrop-blur-lg p-2 lg:p-5 md:aspect-square flex justify-center items-center flex-col">
                   <CardTitle>
-                    <h1 className="text-2xl lg:text-4xl font-bold text-center text-white">
+                    <p className="text-2xl lg:text-4xl font-bold text-center text-white">
                       {item.title}
-                    </h1>
-                    <h2 className="text-sm lg:text-lg font-semibold text-center text-white">
+                    </p>
+                    <p className="text-sm lg:text-lg font-semibold text-center text-white">
                       {item.subtitle}
-                    </h2>
+                    </p>
                   </CardTitle>
 
                   <CardContent className="flex mt-5 md:mt-20 items-center justify-center">
@@ -65,7 +73,7 @@ const CarouselForm = () => {
         </CarouselContent>
 
         <div className="text-center text-sm text-white">
-          {FunFact.map((_, index) => (
+          {randomPerson.funfact.map((_, index) => (
             <button
               key={index}
               onClick={() => api?.scrollTo(index)}

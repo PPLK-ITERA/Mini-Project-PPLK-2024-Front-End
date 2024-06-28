@@ -1,4 +1,4 @@
-import HasilKuis from "@/components/fragments/HasilKuis";
+import HasilKuis from "@/components/fragments/hasilKuis";
 import Image from "next/image";
 
 const Page = () => {
