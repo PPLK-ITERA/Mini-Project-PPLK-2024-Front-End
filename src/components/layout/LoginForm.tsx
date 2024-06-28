@@ -10,11 +10,14 @@ import { Montserrat } from "next/font/google";
 import CarouselForm from "@/components/fragments/CarouselForm";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import login from "@/lib/action/login";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
+  login("test@example.com", "password");
 
   return (
     <div
